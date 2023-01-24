@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="sub_style.css">
+    <link rel="stylesheet" href="common.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="js/gnb.js"></script>
+    <script>
+        $(document).ready(function(){
+            let scrollTop = $(window).scrollTop()
+            let p6_top_cate = $('.p6_top_cate').offset().top
+            let p6_info0 = $('#p6_info0').offset().top
+            let p6_info1 = $('#p6_info1').offset().top
+            let p6_info2 = $('#p6_info2').offset().top
+            let p6_info3 = $('#p6_info3').offset().top
+            let p6_info4 = $('#p6_info4').offset().top
+            let p6_info5 = $('#p6_info5').offset().top
+
+            $(window).resize(function(){
+            p6_top_cate = $('.p6_top_cate').offset().top
+            p6_info0 = $('#p6_info0').offset().top
+            p6_info1 = $('#p6_info1').offset().top
+            p6_info2 = $('#p6_info2').offset().top
+            p6_info3 = $('#p6_info3').offset().top
+            p6_info4 = $('#p6_info4').offset().top
+            p6_info5 = $('#p6_info5').offset().top
+            })
+
+            $(window).scroll(function(){
+                scrollTop = $(window).scrollTop()
+                if(scrollTop>=p6_top_cate){
+                    $('#p6_info0').animate({top:0,opacity:1},500)
+                }
+                if(scrollTop>=p6_info0){
+                    $('#p6_info1').animate({top:0,opacity:1},500)
+                }
+                if(scrollTop>=p6_info1){
+                    $('#p6_info2').delay(500).animate({top:0,opacity:1},500)
+                }
+                if(scrollTop>=p6_info2){
+                    $('#p6_info3').animate({top:0,opacity:1},500)
+                }
+                if(scrollTop>=p6_info3){
+                    $('#p6_info4').animate({top:0,opacity:1},500)
+                }
+                if(scrollTop>=p6_info4){
+                    $('#p6_info5').animate({top:0,opacity:1},500)
+                }
+                if(scrollTop>=p6_info4){
+                    $('#p6_footBanner').delay(500).animate({top:0,opacity:1},500)
+                }
+            })
+
+
+            //  KEY FEAYURES
+            $('.tabs_title>li').each(function(index){
+                $(this).click(function(){
+                    $(this).addClass('tabs_select').siblings().removeClass('tabs_select')
+                    $('.tab_contents>div').eq(index).css('opacity','1').css('position','relative').siblings().css('opacity','0').css('position','absolute')
+                })
+
+            })
+
+            // INDUSRTY USAGE
+            $('.p6_info_cont_cate>ul>li').each(function(index){
+            $(this).click(function(){
+            $('.p6_info_cont_img>ul>li').eq(index).fadeIn(500).siblings().fadeOut(500)
+            $('.p6_info_cont_text>ul>li>ul').eq(index).fadeIn(500).parent().siblings().find('ul').fadeOut(500)
+                })
+            })
+            $('.p6_info1_img0>img').mouseover(function(){
+                $('.p6_info1_img0>.info1_overbox0').fadeIn()
+            })
+            $('.p6_info1_img0>.info1_overbox0').mouseleave(function(){
+                $('.p6_info1_img0>.info1_overbox0').fadeOut()
+            })
+
+            $('.p6_info1_img1>img').mouseover(function(){
+                $('.p6_info1_img1>.info1_overbox1').fadeIn()
+            })
+            $('.p6_info1_img1>.info1_overbox1').mouseleave(function(){
+                $('.p6_info1_img1>.info1_overbox1').fadeOut()
+            })
+
+        })
+    </script>
+    <title>Alchera-Aiir-scout</title>
+</head>
+<body>
+    <? include("header.html"); ?>
+<section id="p6_aiir_scout">
+    <section id="p6_topBanner">
+        <div class="p6_topbanner_wrap">
+            <img src="img/p6-topbannerimg.png" alt="">
+            <div class="p6_top_banner_cont"> 
+                <img src="img/p6-topbannericon.png" alt="">
+                <p>AI 영상관제 솔루션</p> 
+                <h2>Make the world safe<br>
+                    with AI</h2>
+            </div>
+        </div>
+    </section>
+    <div class="p6_top_cate">
+        <ul>
+            <li>AIIR Scout란?</li>
+            <li>AIIR Scout 특장점</li>
+            <li>다이어그램</li>
+            <li>주요기능</li>
+            <li>적용분야</li>
+        </ul>
+    </div>
+
+
+    <section id="p6_info0">
+        <div class="p6_sol_text0">
+        <h2>관리자에게 최적의 모니터링 환경을 제공합니다</h2>
+        </div>
+        <div class="p6_info0_wrap">
+                <div class="p6_info0_box">
+                    <div>01</div>
+                    <img src="img/p3_info1_0.png" alt="">
+                    <h3>지능형 비디오 분석으로 24시간 관제기능 제공보호</h3>
+                    <p>알체라의 AI 영상 분석 기술을 사용하여 언제 어디서든 접근 가능한 관리자 웹으로 효율적이고 정확한 전체 시설 관리를 경험해 보세요.</p>
+                </div>
+                <div class="p6_info0_box">
+                    <div>02</div>
+                    <img src="img/p3_info1_1.png" alt="">
+                    <h3>사전 알림 및 실시간 추적으로 사고 사전 방지</h3>
+                    <p>다양한 알림 및 추적 기능을 통해 시설 내 이상상황 발생 시 신속한 대응이 가능한 모니터링 시스템을 제공합니다.</p>
+                </div>
+                <div class="p6_info0_box">
+                    <div>03</div>
+                    <img src="img/p3_info1_2.png" alt="">
+                    <h3>인구 밀도가 높은 환경의 출입관리에 최적화</h3>
+                    <p>선진화된 알체라의 AI 얼굴 인식기술을 활용하여 인구 밀도가 높은 환경에서의 출입관리도 원활하게 운영 가능합니다.</p>
+                </div>
+         </div>
+    </section>
+
+
+
+    <section id="p6_info1">
+        <div class="p6_info1_text">
+            <h2>더 안전한 시설을 위한 AI관제 솔루션</h2>
+            <p>AIIR Scout(에어 스카우트)는 알체라의 영상인식 AI 기술을 시설의 CCTV에 적용한 솔루션으로 24시간 관리자의<br>
+            도우미가 되어 시설을 안전하게 보호합니다. 관제 지역 내의 입출입 정보, 사용자의 위치 정보 및 동선 파악, 위험 행동<br>
+            인식뿐만 아니라 사물 정보도 인식하여 시설 안의 상황을 모니터링 합니다.
+        </p>
+        </div>
+        <div class="p6_info1_img_wrap">
+            <div class="p6_info1_img0">
+                <img src="img/p6-info1-00.png" alt="">
+                <div class="info1_overbox0">
+                <img src="img/p6-info1-01.png" alt="">
+                </div>
+            </div>
+            <div class="p6_info1_img1">
+                <img src="img/p6-info1-10.png" alt="">
+                <div class="info1_overbox1">
+                <img src="img/p6-info1-11.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="p6_info2">
+        <div class="p6_sol_text2">
+        <p>WHY AIIR SCOUT?</p>
+        <h2>관리자에게 최적의 모니터링 환경을 제공합니다</h2>
+        </div>
+        <div class="p6_info2_wrap">
+                <div class="p6_info2_box">
+                    <div>01</div>
+                    <img src="img/p3_info1_0.png" alt="">
+                    <h3>얼굴인식과 고도화된 사람검출을 적용한 통합 영상인식 기술</h3>
+                    <p>얼굴인식 뿐 아니라 고도화된 사람검출(Person Detection + Pose Estimation)방식으로 유사도를 파악, 보행 및 혼잡한 환경에서도 빠르고 정확하게 대상을 인식 합니다. (최대 5M거리의 보행자 정보 확인 가능)</p>
+                </div>
+                <div class="p6_info2_box">
+                    <div>02</div>
+                    <img src="img/p3_info1_1.png" alt="">
+                    <h3>기존 CCTV 장비에 쉽게 적용 가능한 클라우드향 솔루션</h3>
+                    <p>클라우드 지향 솔루션으로서 서버 구축을 위한 최소한의 하드웨어 설치로 AI 클라우드 서버와 연동하여 쉽고 빠른 성능 업데이트가 가능하며, 기존의 CCTV 그대로 사용할 수 있습니다.</p>
+                </div>
+                <div class="p6_info2_box">
+                    <div>03</div>
+                    <img src="img/p3_info1_2.png" alt="">
+                    <h3>별도의 설치 필요없는 웹/모바일 대시보드</h3>
+                    <p>웹과 모바일 구분없이 접근 가능한 URL를 제공하여 별도의 어플리케이션 설치 없이 쉽게 언제 어디서든 모니터링이 가능합니다.</p>
+                </div>
+         </div>
+    </section>
+
+    <section id="p6_info3">
+        <div class="p6_info3_text">
+        <p>HOW IT WORKS</p>
+        <h2>기존 CCTV 에 인공지능을 더하세요</h2>
+        <p>AIIR Scout는 CCTV와 Stand-alone 디바이스를 통해 AI로 시설의 모든 사용자와 물체를 추적하고 관리합니다. 또한<br> 알체라의 AI출입관리 솔루션인 AIIR Pass와 연동하여 출입문 개폐등의 출입통제 기능도 구현하실 수 있습니다.
+        </p>
+        </div>
+        <div>
+            <img src="img/p6-info3.png" alt="">
+        </div>
+    </section>
+
+
+    <section id="p6_info4">
+        <div>
+            <h2>KEY FEATURES</h2>
+            <ul class="tabs_title">
+                <li class="tabs_select"><h3>실시간 모니터링 및 로그 확인</h3></li>
+                <li><h3>무단 접근 알림</h3></li>
+                <li><h3>프로필 관리</h3></li>
+                <li><h3>사람 감지 및 추적</h3></li>
+                <li><h3>행동 추적</h3></li>
+            </ul>
+            <div class="tab_contents">
+                <div>
+                    <div class="p6_tabs_typo">
+                    <h3>실시간 모니터링 및 로그 확인</h3>
+                    <p>날짜와 장소를 설정하여 실시간으로 시설 안의 입출입 현황을 확인하고 관리할 수 있습니다.</p>
+                    </div>
+                    <div class="p6_tabs_img">
+                        <img src="img/p5_tabs0.png" alt="">
+                    </div>
+                </div>
+                <div>
+                    <div class="p6_tabs_typo">
+                        <h3>무단 접근 알림</h3>
+                        <p>등록 사용자 뿐 아니라 미등록 사용자에 대해서도 감지하며, 필요한 경우 이와 관련한 알람 기능을 제공합니다.</p>
+                        </div>
+                        <div class="p6_tabs_img">
+                            <img src="img/p5_tabs1.png" alt="">
+                        </div>
+                </div>
+                <div>
+                    <div class="p6_tabs_typo">
+                        <h3>프로필 관리</h3>
+                        <p>관리자가 사용자의 속성(카테고리) 를 정의하여, 카테고리 별로 사용자 관리(등록, 삭제 등) 가 가능합니다.</p>
+                        </div>
+                        <div class="p6_tabs_img">
+                            <img src="img/p5_tabs0.png" alt="">
+                        </div>
+                </div>
+                <div>
+                    <div class="p6_tabs_typo">
+                        <h3>사람 감지 및 추적</h3>
+                        <p>탐지 및 지속적인 추적을 통해 사람이나 물체를 찾습니다.</p>
+                        </div>
+                        <div class="p6_tabs_img">
+                            <img src="img/p5_tabs1.png" alt="">
+                        </div>
+                </div>
+                <div>
+                    <div class="p6_tabs_typo">
+                        <h3>행동 추적</h3>
+                        <p>방화나 월담 등과 같은 지정한 이상행동을 감지하고 패턴을 분석하여 모니터링 하는 관제 시스템 구축이 가능합니다.</p>
+                    </div>
+                    <div class="p6_tabs_img">
+                        <img src="img/p5_tabs0.png" alt="">
+                    </div>
+                </div>
+            </div>
+    </section>
+    <section id="p6_info5">
+        
+        <p>INDUSTRY USAGE</p>
+        <h3>다수인원에 대한 모니터링 및 관제가 필요한<br>다양한 비즈니스 현장에 활용 가능합니다.</h3>
+        <div class="p6_info_cont_wrap">
+            <div class="p6_info_cont_cate">
+                <ul>
+                    <li>교육 기관</li>
+                    <li>호텔 / 카지노</li>
+                    <li>공유오피스</li>
+                    <li>건설</li>
+                    <li>병원</li>
+                </ul>
+            </div>
+            <div class="p6_info_cont_img">
+                <ul>
+                    <li><img src="img/p6-info5-0.png" alt=""></li>
+                    <li><img src="img/p6-info5-1.png" alt=""></li>
+                    <li><img src="img/p6-info5-2.png" alt=""></li>
+                    <li><img src="img/p6-info5-3.png" alt=""></li>
+                    <li><img src="img/p6-info5-4.png" alt=""></li>
+                </ul>
+            </div>
+            <div class="p6_info_cont_text">
+                <ul>
+                    <li>
+                        <ul>
+                            <li>지정된 구역의 무단 접근 방지</li>
+                            <li>시설의 각 층에서 학생 찾기</li>
+                            <li>무단이탈자 추적</li>
+                            <li>얼굴인식으로 출석체크</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>각 지역의 트래픽 모니터링</li>
+                            <li>비정상적인 행동 추적</li>
+                            <li>지정된 구역의 무단 접근 방지</li>
+                            <li>차단된 액세스 제한</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>방문자 로그 제공</li>
+                            <li>비정상적인 행동 추적</li>
+                            <li>등록되지 않은 사람이 출입할 때 알림 수신</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>각 지역의 개인 모니터링</li>
+                            <li>무단이탈자 추적</li>
+                            <li>미등록자 출입 시 알림 수신</li>
+                            <li>비정상적인 행동 추적</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>임상 시험을 위해 개인 모니터링</li>
+                            <li>시설에서 환자 찾기</li>
+                            <li>비정상적인 행동 추적</li>
+                            <li>미등록자 출입 시 알림 수신</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id=p6_footBanner>
+        <img src="img/footbanner.png" alt="">
+        <img src="img/footbanner_m.png" alt="">
+        <div class="p6_foot_overbox">
+                <div class="p6_foot_icon">
+                    <img src="img/header_logo.png" alt="">
+                </div>
+                <div class="p6_foot_text">
+                    <h2>알체라의 AI 얼굴인식 기술을 직접 체험해보세요</h2>
+                    <p>AIIR SDK 데모를 무료로 이용해보실 수 있습니다. 지금 신청하세요!</p>
+                </div>
+                <div class="p6_foot_btn">
+                    <button>무료 데모 신청하기</button>
+            </div>
+    </div>
+    </section>
+    <? include("footer.html"); ?>
+</section>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sub_style.css">
+    <link rel="stylesheet" href="common.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="js/gnb.js"></script>
+    <script>
+    $(document).ready(function(){
+        let scrollTop = $(window).scrollTop()
+        let p3_top_cate = $('.p3_top_cate').offset().top
+        let p3_info0 = $('#p3_info0').offset().top
+        let p3_info1 = $('#p3_info1').offset().top
+        let p3_info2 = $('#p3_info2').offset().top
+        let p3_info3 = $('#p3_info3').offset().top
+        let p3_info4 = $('#p3_info4').offset().top
+        let p3_info5 = $('#p3_info5').offset().top
+        console.log(scrollTop)
+
+        $(window).resize(function(){
+         p3_top_cate = $('.p3_top_cate').offset().top
+         p3_info0 = $('#p3_info0').offset().top
+         p3_info1 = $('#p3_info1').offset().top
+         p3_info2 = $('#p3_info2').offset().top
+         p3_info3 = $('#p3_info3').offset().top
+         p3_info4 = $('#p3_info4').offset().top
+         p3_info5 = $('#p3_info5').offset().top
+        })
+
+        $('.tabs_title>li').each(function(index){
+            $(this).click(function(){
+                $(this).addClass('tabs_select').siblings().removeClass('tabs_select')
+                $('.tab_contents>div').eq(index).css('opacity','1').css('position','relative').siblings().css('opacity','0').css('position','absolute')
+            })
+        })
+
+        $(window).scroll(function(){
+            scrollTop = $(window).scrollTop()
+            if(scrollTop>=p3_top_cate){
+                $('#p3_info0').animate({top:0,opacity:1},600)
+            }
+            if(scrollTop>=p3_info0){
+                $('#p3_info1').animate({top:0,opacity:1},600)
+            }
+            if(scrollTop>=p3_info1){
+                $('#p3_info2').animate({top:0,opacity:1},600)
+            }
+            if(scrollTop>=p3_info2){
+                $('#p3_info3').animate({top:0,opacity:1},600)
+            }
+            if(scrollTop>=p3_info3){
+                $('#p3_info4').animate({top:0,opacity:1},600)
+            }
+            if(scrollTop>=p3_info4){
+                $('#p3_info5').animate({top:0,opacity:1},600)
+            }
+            if(scrollTop>=p3_info4){
+                $('#p3_footBanner').delay(600).animate({top:0,opacity:1},600)
+            }
+        })
+    })
+    </script>
+
+    <title>Alchera-Fire scout</title>
+</head>
+<body>
+<? include("header.html"); ?>
+<section id="p3_firescout">
+    <section id="p3_topBanner">
+        
+        <div class="p3_topbanner_wrap">
+            <img src="img/p3-topbannerimg.png" alt="">
+            <div class="p3_top_banner_cont"> 
+                <img src="img/p3-topbannericon.png" alt="">
+                <p>Be always prepared to<br>fight against wildfires</p>
+                <button>파이어스카우트 웹사이트</button>
+            </div>
+        </div>
+    </section>
+    <div class="p3_top_cate">
+        <ul>
+            <li>FireScout?</li>
+            <li>FireScout 특장점</li>
+            <li>다이어그램</li>
+            <li>주요기능</li>
+            <li>적용분야</li>
+        </ul>
+    </div>
+    <div>
+    <section id="p3_info0">
+        <div class="p3_sol_text0">
+        <h2>AI로 산불을 예방합니다. 환경을 지킵니다.</h2>
+        </div>
+        <div class="p3_info0_wrap">
+                <div class="p3_info0_box">
+                    <div>01</div>
+                    <img src="img/p3_info1_0.png" alt="">
+                    <h3>AI로 발화 초기 시점 연기 발생 감지</h3>
+                    <p>AI 연기 감지 솔루션은 수백만 개의 이미지를 실시간 받아 산불 연기를 감지하여 큰 불로 번질 수 있는 상황을 예방합니다.</p>
+                </div>
+                <div class="p3_info0_box">
+                    <div>02</div>
+                    <img src="img/p3_info1_1.png" alt="">
+                    <h3>화재 위험 발생 시, 실시간 알람 전송</h3>
+                    <p>연기 감지 시에 대시보드와 문자 및 이메일을 통해 즉각적인 알람을 받을 수 있습니다. 비상사태 후에도 화재 전 4분 타임랩스 영상을 통해 산불 상황을 분석하고 확인할 수 있습니다.
+                    </p>
+                </div>
+                <div class="p3_info0_box">
+                    <div>03</div>
+                    <img src="img/p3_info1_2.png" alt="">
+                    <h3>기존 대응 프로세스와의 원활한 통합</h3>
+                    <p>알체라의 클라우드 기반 시스템은 추가 설치 없이 기존 비상 대응 프로세스에 원활하게 통합되어 사용하실 수 있습니다.</p>
+                </div>
+         </div>
+    </section>
+    <section id="p3_info1">
+        <div class="p3_sol_text1">
+        <h2>빠른 초기 대응을 위한 AI 연기 감지 솔루션</h2>
+        <h3>산불은 발화지점의 연기를 얼마나 빠른 속도로 발견하는지가 초기 산불 진화에 큰 영향을 줍니다.<br>
+            FireScout(파이어스카우트) 는 모니터링 카메라와 알체라 AI 엔진 서버를 네트워크로 연결하여 연기의 초기 단계를 <br>
+            감지하는 산불 감지 AI 솔루션입니다. SaaS기반 솔루션으로 기존 사용중인 CCTV 카메라와도 쉽고 빠르게 연동이 <br>
+            가능하며, 높은 정확도로 발화 연기를 감지, 감지 즉시 실시간 감지 경보를 전송합니다.</h3>
+        </div>
+        <img src="img/p3_solution.png" alt="">
+    </section>
+    <section id="p3_info2">
+        <div class="p3_sol_text2">
+        <h3>WHY FIRESCOUT?</h3>
+        <h2>미국 캘리포니아의 산불을<br>
+            모니터링하고 있습니다.</h2>
+        </div>
+        <div class="p3_info2_wrap">
+                <div class="p3_info2_box">
+                    <div>01</div>
+                    <img src="img/p3_info1_0.png" alt="">
+                    <h3>정확한 얼굴인식</h3>
+                    <p>직관적으로 디자인된 
+                        함수를 통해 빠르게 배우고
+                         개발할 수 있습니다.</p>
+                </div>
+                <div class="p3_info2_box">
+                    <div>02</div>
+                    <img src="img/p3_info1_1.png" alt="">
+                    <h3>가벼운 소프트웨어</h3>
+                    <p>
+                        AIIR SDK는 낮은 프로세싱 파워의 기기들에서도 높은 성능을 유지할 수 있습니다.
+                    </p>
+                </div>
+                <div class="p3_info2_box">
+                    <div>03</div>
+                    <img src="img/p3_info1_2.png" alt="">
+                    <h3>컴팩트한 구성</h3>
+                    <p>AI 모델은 앱 설치 후 별도로 
+                        다운로드 가능하기 때문에 
+                        앱 스토어의 용량 제한으로부터 자유롭습니다.
+                        (2MB 라이브러리 + 170MB 모델)</p>
+                </div>
+         </div>
+    </section>
+    <section id="p3_info3">
+        <div class="p3_sol_text3">
+        <h2>딥러닝으로 정확도를 지속 개선합니다</h2>
+        <h3>
+            아래와 같은 4단계 프로세스를 통해 통상적으로 1분 이내에 산불을 감지합니다. 또한, 지속적인 딥 러닝으로 AI 엔진을<br> 개선하여 정확도를 지속 향상시킵니다.</h3>
+        </div>
+        <div class="p3_info_cont">
+            <ul>
+                <li><img src="img/p3-deep0.png" alt=""><h3>화재감지 카메라</h3><p>기존에 설치되어 있는 카메라 활용</p></li>
+                <li><img src="img/p3-deep1.png" alt=""><h3>클라우드 활용 AI</h3><p>딥러닝 알고리즘을 사용하여<br> 이미지 분석 및 연기를 감지</p></li>
+                <li><img src="img/p3-deep2.png" alt=""><h3>즉각 알림</h3><p>연기 확인 시 사용자에게<br> 대시보드와 문자 및 이메일로 알림 전송</p></li>
+                <li><img src="img/p3-deep3.png" alt=""><h3>출동</h3><p>모니터링 라이브 링크를 통해<br> 산불 확인후 출동 결정</p></li>
+            </ul>
+            <div class="p3_info_m_cont">
+                <img src="img/p3-m-deep.png" alt="">
+            </div>
+        </div>
+        <div class="info3_bot_typo">
+            <p>지속적인 학습</p>
+            <div>딥러닝</div>
+        </div>
+    </section>
+    <section id="p3_info4">
+        <div class="p3_sol_text4">
+            <h2>KEY FEATURES</h2>
+        </div>
+            <ul class="tabs_title">
+                <li class="tabs_select"><h3>IR 카메라 지원 야간 모드</h3></li>
+                <li><h3>다양한 알림 수단 제공</h3></li>
+                <li><h3>연기 방향 추정 기능</h3></li>
+                <li><h3>산불 이벤트 유형 분류</h3></li>
+                <li><h3>이벤트 리뷰</h3></li>
+            </ul>
+            <div class="tab_contents">
+                <div>
+                    <div class="p3_tabs_typo">
+                    <h3>IR 카메라 지원 야간 모드</h3>
+                    <p>현재 동종 솔루션 중 유일하게 야간 모드 (CCTV 카메라가 IR 모드 지원 시에 가능)을 제공, 낮 시간뿐 아니라 밤시간 중에도 연기와 화재를 감지합니다.
+                        <br></p>
+                    </div>
+                    <div class="p3_tabs_img">
+                        <img src="img/p3_tabs0.png" alt="">
+                    </div>
+                </div>
+                <div>
+                    <div class="p3_tabs_typo">
+                        <h3>다양한 알림 수단 제공</h3>
+                        <p>사운드 및 시각 효과의 대시보드 내 알림 기능을 제공하며 문자 및 이메일을 등록된 관리자에게 발송하여 실시간으로 위험상황을 알립니다.
+                            <br></p>
+                        </div>
+                        <div class="p3_tabs_img">
+                            <img src="img/p3_tabs1.png" alt="">
+                        </div>
+                </div>
+                <div>
+                    <div class="p3_tabs_typo">
+                        <h3>연기 방향 추정 기능</h3>
+                        <p>연기의 방향과 각도로 추정하여 출동 시에 확인할 수 있는 위도와 경도 범위를 제공합니다. 또한 각 화재 영상에서 카메라 위치를 조작할 수 있어 더욱 더 자세한 화재 각도와 위치 모니터링이 가능합니다.
+                            <br></p>
+                        </div>
+                        <div class="p3_tabs_img">
+                            <img src="img/p3_tabs2.png" alt="">
+                        </div>
+                </div>
+                <div>
+                    <div class="p3_tabs_typo">
+                        <h3>산불 이벤트 유형 분류</h3>
+                        <p>이벤트 발생 이후, 결과 값을 Fire, Non-fire, None, Unknown으로 분류하고 보고서를 생성합니다. 산불 분류는 AI 엔진 학습에 활용되어, 솔루션의 정확도를 지속 개선합니다.
+                            <br></p>
+                        </div>
+                        <div class="p3_tabs_img">
+                            <img src="img/p3_tabs3.png" alt="">
+                        </div>
+                </div>
+                <div>
+                    <div class="p3_tabs_typo">
+                        <h3>이벤트 리뷰</h3>
+                        <p>날짜 또는 카메라 유형별로 최근 및 과거의 기록을 한눈에 볼 수 있습니다.
+                            <br></p>
+                        </div>
+                        <div class="p3_tabs_img">
+                            <img src="img/p3_tabs4.png" alt="">
+                        </div>
+
+                </div>
+            </div>
+    </section>
+    <section id="p3_info5">
+        <div class="p3_info5_title">
+        <h2>스마트한 산불 지킴이, FireScout</h2>
+        <h3>FireScout은 산불 모니터링이 필요한 지역 사회에 적용할 수 있습니다.</h3>
+        </div>
+        <div class="p3_info5_wrap">
+            <div class="p3_info5_text">
+                    <div class="p3_info5_mini0">
+                        <h4>119 구조대원</h4>
+                    </div>
+                    <div class="p3_info5_mini1">
+                        <h4>유틸리티 시설</h4>
+                    </div>
+                    <div class="p3_info5_mini2">
+                        <h4>정부 기관</h4>
+                    </div>
+            </div>
+            <div class="p3_info5_img">
+                <img src="img/p3_info5.png" alt="">
+            </div>
+        </div>
+    </section>
+    <section id=p3_footBanner>
+        <img src="img/firescout_footbanner.png" alt="">
+        <img src="img/firescout_m_footbanner.png" alt="">
+        <div class="p3_foot_overbox">
+                <div class="p3_foot_icon">
+                    <img src="img/p3-topbannericon.png" alt="">
+                </div>
+                <div class="p3_foot_text">
+                    <p>파이어스카우트의 더 많은 기능과 정보를 확인해 보세요.</p>
+                </div>
+                <div class="p3_foot_btn">
+                    <button>웹사이트 바로가기</button>
+            </div>
+    </div>
+    </section>
+    <? include("footer.html"); ?>
+</section>
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sub_style.css">
+    <link rel="stylesheet" href="common.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="js/gnb.js"></script>
+    <script>
+        $(document).ready(function(){
+            let scrollTop = $(window).scrollTop()
+            let p5_top_cate = $('.p5_top_cate').offset().top
+            let p5_info0 = $('#p5_info0').offset().top
+            let p5_info1 = $('#p5_info1').offset().top
+            let p5_info2 = $('#p5_info2').offset().top
+            let p5_info3 = $('#p5_info3').offset().top
+            let p5_info4 = $('#p5_info4').offset().top
+
+            $(window).resize(function(){
+            p5_top_cate = $('.p5_top_cate').offset().top
+            p5_info0 = $('#p5_info0').offset().top
+            p5_info1 = $('#p5_info1').offset().top
+            p5_info2 = $('#p5_info2').offset().top
+            p5_info3 = $('#p5_info3').offset().top
+            p5_info4 = $('#p5_info4').offset().top
+            })
+
+            $(window).scroll(function(){
+                scrollTop = $(window).scrollTop()
+                if(scrollTop>=p5_top_cate){
+                    $('#p5_info0').animate({top:0,opacity:1})
+                }
+                if(scrollTop>=p5_info0){
+                    $('#p5_info1').animate({top:0,opacity:1})
+                }
+                if(scrollTop>=p5_info1){
+                    $('#p5_info2').animate({top:0,opacity:1})
+                }
+                if(scrollTop>=p5_info2){
+                    $('#p5_info3').animate({top:0,opacity:1})
+                }
+                if(scrollTop>=p5_info3){
+                    $('#p5_info4').animate({top:0,opacity:1})
+                }
+                if(scrollTop>=p5_info3){
+                    $('#p5_footBanner').animate({top:0,opacity:1})
+                }
+            })
+
+
+
+
+
+            $('.tabs_title>li').each(function(index){
+                $(this).click(function(){
+                    $(this).addClass('tabs_select').siblings().removeClass('tabs_select')
+                    $('.tab_contents>div').eq(index).css('opacity','1').css('position','relative').siblings().css('opacity','0').css('position','absolute')
+                })
+            })
+            
+
+
+            let topNum = 0
+
+
+            function p5cate(){
+                $('.p5_info1_cate>li>img').eq(topNum).attr('src','img/p5-info1-cate0.png').parent().siblings().find('img').attr('src','img/p5-info1-cate1.png')
+            }
+
+                $('.p5_info1_next').click(function(){
+                let ani0 = $('.p5_info1_img>ul>li').is(':animated')
+                if( ani0 == false){
+                    topNum++
+                    if(topNum>3){topNum=0}
+                    $('.p5_info1_img>ul>li').first().animate({marginLeft:'-25%'},600,function(){
+                        $(this).appendTo('.p5_info1_img>ul').css('margin-left',0)
+                        })
+                    }
+                    p5cate()
+            })
+            
+
+
+            $('.p5_info1_prev').click(function(){
+                let ani1 = $('.p5_info1_img>ul>li').is(':animated')
+                if(ani1 == false){
+                    topNum--
+                    if(topNum<0){topNum=3}
+                    $('.p5_info1_img>ul>li').last().prependTo('.p5_info1_img>ul').css('margin-left','-25%').animate({marginLeft:0},600)
+                }
+                p5cate()
+            })
+
+            function autoPlay(){
+                $('.p5_info1_next').trigger('click')
+            }
+            auto = setInterval(autoPlay,3000)
+            let stopNum = 0
+            $('.p5_info1_stop').click(function(){
+                stopNum++
+                if(stopNum%2==1){
+                    clearInterval(auto)
+                    $('.p5_info1_stop>img').attr('src','img/stop_btn1.png')
+                }else{
+                    auto = setInterval(autoPlay,3000)
+                    $('.p5_info1_stop>img').attr('src','img/stop_btn.png')
+                }
+            })
+
+
+
+        })
+    </script>
+    <title>Alchera-Aiir-id</title>
+</head>
+<body>
+    <? include("header.html"); ?>
+<section id="p5_aiir_id">
+    <section id="p5_topBanner">
+        <div class="p5_topbanner_wrap">
+            <img src="img/p5-topbannerimg.png" alt="">
+            <div class="p5_top_banner_cont"> 
+                <img src="img/p5-topbannericon.png" alt="">
+                <p>AI 신원확인 솔루션</p>
+                <h2>Ensure seamless onboarding<br>
+                    with top-class security</h2>
+            </div>
+        </div>
+    </section>
+    <div class="p5_top_cate">
+        <ul>
+            <li>AIIR ID란?</li>
+            <li>서비스 플로우</li>
+            <li>AIIR 특장점</li>
+            <li>주요기능</li>
+            <li>적용분야</li>
+        </ul>
+    </div>
+
+
+
+    <section id="p5_info0">
+        <div class="p5_sol_text0">
+            <h2>AI 인증으로 업무 효율을 개선하고,
+                고객 만족도를 높이세요</h2>
+        </div>
+        <div class="p5_info0_wrap">
+                <div class="p5_info0_box">
+                    <div>01</div>
+                    <img src="img/p3_info1_0.png" alt="">
+                    <h3>편리한 UX로 전환율 증대</h3>
+                    <p>복잡하고 오래 걸리는 신원 인증을 간소화할 수 있습니다. 알체라의 AI 신원인증 솔루션은 온보딩과 지속 인증(최초 인증 이후 서비스 중 필요한 시점에 신원인증 지원)으로 고객 여정을 개선하고 전환율을 증가시킵니다.</p>
+                </div>
+                <div class="p5_info0_box">
+                    <div>02</div>
+                    <img src="img/p3_info1_1.png" alt="">
+                    <h3>빠른 적용으로 AML 규제 대응</h3>
+                    <p>AIIR ID는 간단하고 빠르게 적용이 가능한, 비대면 고객 신원확인 (eKYC) 프로세스에 특화되어 있기 때문에 AML 규제 대응에 매우 효과적입니다.</p>
+                </div>
+                <div class="p5_info0_box">
+                    <div>03</div>
+                    <img src="img/p3_info1_2.png" alt="">
+                    <h3>신원인증 자동화로 업무 효율 개선</h3>
+                    <p>신원인증 관련 업무 부담을 줄이고 각종 리소스를 효율적으로 재배치할 수 있습니다. 돈과 시간을 절약하고, 더 중요한 업무에 집중하세요.</p>
+                </div>
+         </div>
+    </section>
+    <section id="p5_info1">
+        <div class="p5_info1_text">
+        <h3>HOW IT WORKS</h3>
+        <h2>원활한 온보딩과 강력한 보안을 위한 AI 신원확인 솔루션</h2>
+        <p>AIIR ID(에어 아이디)는 금융권 eKYC를 위해 최적화된 AI 신원확인 솔루션입니다.<br> 알체라의 최첨단 Anti-Spoofing 기능을 통해, 신분증의 진위 여부와 신분증 소유자의 신원을 확인하여 높은 수준의 보안을 제공합니다.<br>AIIR ID로 고객들에게 더욱 매끄러운 온보딩 경험을 제공하고 진화하는 신원도용 사기로부터 비즈니스를 지키세요.</p>
+        </div>
+        <ul class="p5_info1_cate">
+            <li class="p5_info1_select"><img src="img/p5-info1-cate0.png" alt="">유저 정보 입력</li>
+            <li><img src="img/p5-info1-cate1.png" alt="">OCR</li>
+            <li><img src="img/p5-info1-cate1.png" alt="">Liveness & Face Match</li>
+            <li><img src="img/p5-info1-cate1.png" alt="">신원 인증 완료</li>
+        </ul>
+        <div class="p5_info1_cont">
+            <div class="p5_info1_img">
+                <ul>
+                    <li><img src="img/p5-info1-cont0.png" alt=""></li>
+                    <li><img src="img/p5-info1-cont1.png" alt=""></li>
+                    <li><img src="img/p5-info1-cont0.png" alt=""></li>
+                    <li><img src="img/p5-info1-cont1.png" alt=""></li>
+                </ul>
+            </div>
+            <div class="p5_info1_controls">
+                <ul>
+                    <li class="p5_info1_prev"><img src="img/prev_btn.png" alt=""></li>
+                    <li class="p5_info1_stop"><img src="img/stop_btn.png" alt=""></li>
+                    <li class="p5_info1_next"><img src="img/next_btn.png" alt=""></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="p5_info2">
+        <div class="p5_sol_text2">
+            <h2>AI 인증으로 업무 효율을 개선하고,
+                고객 만족도를 높이세요</h2>
+        </div>
+        <div class="p5_info2_wrap">
+                <div class="p5_info2_box">
+                    <div>01</div>
+                    <img src="img/p3_info1_0.png" alt="">
+                    <h3>빠르고 정확한 얼굴인식</h3>
+                    <p>알체라의 고도화된 AI 얼굴인식 엔진 성능이 적용되어, 빠르고 정확한 인증이 가능합니다.</p>
+                </div>
+                <div class="p5_info2_box">
+                    <div>02</div>
+                    <img src="img/p3_info1_1.png" alt="">
+                    <h3>강력한 위변조 방지</h3>
+                    <p>AIIR ID는 실시간(라이브) 사진의 위조 여부를 판단하여 RGB, IR, 3D-Depth 카메라에서 신원도용 사기를 방지할 수 있습니다.</p>
+                </div>
+                <div class="p5_info2_box">
+                    <div>03</div>
+                    <img src="img/p3_info1_2.png" alt="">
+                    <h3>신분증 진위 확인</h3>
+                    <p>외교부 여권사진DB와 연동하여 고유번호 및 발급일자 정보 자동 검증이 가능합니다. (22년 상반기 중 운전면허증 인증서비스 제공 예정)</p>
+                </div>
+         </div>
+    </section>
+    <section id="p5_info3">
+        <div>
+            <h2>KEY FEATURES</h2>
+            <ul class="tabs_title">
+                <li class="tabs_select"><h3>광학문자인식 (OCR)</h3></li>
+                <li><h3>반응형 웹 기반 솔루션</h3></li>
+                <li><h3>얼굴 유사도 기반 자동 승인</h3></li>
+                <li><h3>낮은 유사도 대상 수동 승인 지원</h3></li>
+                <li><h3>심사결과 및 거부 사유 조회</h3></li>
+            </ul>
+            <div class="tab_contents">
+                <div>
+                    <div class="p5_tabs_typo">
+                    <h3>광학문자인식 (OCR)</h3>
+                    <p>텍스트 정보 자동 추출 및 민감정보 자동 마스킹이 가능합니다.</p>
+                    </div>
+                    <div class="p5_tabs_img">
+                        <img src="img/p5_tabs0.png" alt="">
+                    </div>
+                </div>
+                <div>
+                    <div class="p5_tabs_typo">
+                        <h3>반응형 웹 기반 솔루션</h3>
+                        <p>디바이스 종류에 따라 웹 크기 자동 조정되어 별도 다운로드가 불필요합니다.</p>
+                        </div>
+                        <div class="p5_tabs_img">
+                            <img src="img/p5_tabs1.png" alt="">
+                        </div>
+                </div>
+                <div>
+                    <div class="p5_tabs_typo">
+                        <h3>얼굴 유사도 기반 자동 승인</h3>
+                        <p>신분증 사진과 얼굴 사진 유사도를 기준치와 대조해 자동 승인 및 거부가 가능합니다.</p>
+                        </div>
+                        <div class="p5_tabs_img">
+                            <img src="img/p5_tabs0.png" alt="">
+                        </div>
+                </div>
+                <div>
+                    <div class="p5_tabs_typo">
+                        <h3>낮은 유사도 대상 수동 승인 지원</h3>
+                        <p>신분증 사진과 얼굴 사진 유사도의 자세한 검증이 필요한 경우 수동 승인 및 거부가 가능합니다.</p>
+                        </div>
+                        <div class="p5_tabs_img">
+                            <img src="img/p5_tabs1.png" alt="">
+                        </div>
+                </div>
+                <div>
+                    <div class="p5_tabs_typo">
+                        <h3>심사결과 및 거부 사유 조회</h3>
+                        <p>자동 및 수동 심사 결과 확인하고 사유를 조회하는 것이 가능합니다.</p>
+                    </div>
+                    <div class="p5_tabs_img">
+                        <img src="img/p5_tabs0.png" alt="">
+                    </div>
+                </div>
+            </div>
+    </section>
+    <section id="p5_info4">
+        <h2>단시간 내에, 필수적인 KYC 프로세스를
+            구축하고자 하는 다음의 고객에게 추천합니다</h2>
+        <div class="p5_info4_wrap">
+            <div class="p5_info4_text">
+                    <div class="p5_info4_mini0">
+                        <h4>KYC 도입이 필요한
+                            온라인투자연계금융업자(P2P금융)</h4>
+                    </div>
+                    <div class="p5_info4_mini1">
+                        <h4>자금세탁방지 의무를 갖는 금융업자 중
+                            외부 eKYC 솔루션 도입을 고려하고 있는 업체</h4>
+                    </div>
+                    <div class="p5_info4_mini2">
+                        <h4>특금법 상 등록요건을 갖추고 등록 예정인 
+                            가상화폐거래소</h4>
+                    </div>
+            </div>
+            <div class="p5_info4_img">
+                <img src="img/background-face.png" alt="">
+            </div>
+        </div>
+    </section>
+    <section id=p5_footBanner>
+        <img src="img/footbanner.png" alt="">
+        <img src="img/footbanner_m.png" alt="">
+        <div class="p5_foot_overbox">
+                <div class="p5_foot_icon">
+                    <img src="img/header_logo.png" alt="">
+                </div>
+                <div class="p5_foot_text">
+                    <h2>알체라의 AI 얼굴인식 기술을 직접 체험해보세요</h2>
+                    <p>AIIR SDK 데모를 무료로 이용해보실 수 있습니다. 지금 신청하세요!</p>
+                </div>
+                <div class="p5_foot_btn">
+                    <button>무료 데모 신청하기</button>
+            </div>
+    </div>
+    </section>
+    <? include("footer.html"); ?>
+</section>
+</body>
+</html>

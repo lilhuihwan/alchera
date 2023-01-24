@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alchera-news</title>
+    <link rel="stylesheet" href="sub_style.css">
+    <link rel="stylesheet" href="common.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="js/gnb.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.news_btn_wrap>button').each(function(index){
+                $(this).click(function(){
+                    $('.newspage_list_wrap>ul').eq(index).fadeIn().css('position','relative').siblings().fadeOut()
+                    $(this).addClass('tabs_select').siblings().removeClass('tabs_select')
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <? include("header.html"); ?>
+    <section id="newsHead">
+        <div class="news_head">
+            <div class="news_head_inner">
+                <h2>News</h2>
+                <div class="news_btn_wrap">
+                <button class="news_left_btn btn tabs_select">Press release</button>
+                <button class="news_right_btn btn">Notice</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="news_list">
+        <div class="newspage_list_wrap">
+                <ul class="news_list1">
+                        <li><img src="img/newspage0.png" alt=""><div class="news_overbox"><div class="news_typo_banner">News</div><p>알체라, 글로벌 AI학회‘NeurIPS 2022’서<br> ‘산불 조기 검출 시스템’ 논문 채택</p><div class="news_viewmore">View more</div</div></li>
+                        <li><img src="img/newspage1.png" alt=""><div class="news_overbox"><div class="news_typo_banner">News</div><p>알체라, 제이디솔루션과 스마트 시티 구축<br> 및 사회 안전 강화를 위해 MOU 체결</p><div class="news_viewmore">View more</div</div></li>
+                        <li><img src="img/newspage2.png" alt=""><div class="news_overbox"><div class="news_typo_banner">News</div><p>알체라, “산불감지 기술로 실내 화재도<br> 예방”…AI 화재감지 솔루션 개발</p><div class="news_viewmore">View more</div</div></li>
+                        <li><img src="img/newspage3.png" alt=""><div class="news_overbox"><div class="news_typo_banner">News</div><p>알체라, 유상증자 일반공모 청약경쟁률<br> 296대 1 기록</p><div class="news_viewmore">View more</div</div></li>
+                        <li><img src="img/newspage4.png" alt=""><div class="news_overbox"><div class="news_typo_banner">News</div><p>알체라 안면인식 솔루션, 국제표준화기구<br> ‘얼굴 위·변조 탐지 성능’ 인증</p><div class="news_viewmore">View more</div</div></li>
+                        <li><img src="img/newspage5.png" alt=""><div class="news_overbox"><div class="news_typo_banner">News</div><p>알체라 자회사 ‘유스비’, 벤츠 파이낸셜<br> 서비스 코리아에 본인인증 솔루션 제공</p><div class="news_viewmore">View more</div</div></li>
+                        <li><img src="img/newspage6.png" alt=""><div class="news_overbox"><div class="news_typo_banner">News</div><p>알체라 미서부 최대 전력회사 PG&E와 AI 산불감지솔루션 공급 파트너십 체결</p><div class="news_viewmore">View more</div</div></li>
+                        <li><img src="img/newspage7.png" alt=""><div class="news_overbox"><div class="news_typo_banner">News</div><p>알체라, ‘대한민국 AI 역량 강화 프로젝트’ 웨비나 개최</p><div class="news_viewmore">View more</div</div></li>
+                        <li><img src="img/newspage8.png" alt=""><div class="news_overbox"><div class="news_typo_banner">News</div><p>'기술 검증 끝낸' 알체라, 실적 수확 나섰다</p><div class="news_viewmore">View more</div</div></li>
+                </ul>
+                <ul class="news_list2">
+                    <li><img src="img/newspage9.png" alt=""><div class="news_overbox"><div class="news_typo_banner">News</div><p>(주)알체라 실권주 일반공모 청약 안내</p><div class="news_viewmore">View more</div</div></li>
+                    <li><img src="img/newspage8.png" alt=""><div class="news_overbox"><div class="news_typo_banner">News</div><p>유상증자 신주발행가액 확정 공고</p><div class="news_viewmore">View more</div</div></li>
+                    <li><img src="img/newspage7.png" alt=""><div class="news_overbox"><div class="news_typo_banner">News</div><p>신주발행 및 명의개서 정지공고</p><div class="news_viewmore">View more</div</div></li>
+                    <li><img src="img/newspage6.png" alt=""><div class="news_overbox"><div class="news_typo_banner">News</div><p>AI 학습용 데이터 획득을 촬영 장비 제작 위탁 용역 입찰 사업 공고</p><div class="news_viewmore">View more</div</div></li>
+                    <li><img src="img/newspage5.png" alt=""><div class="news_overbox"><div class="news_typo_banner">News</div><p>주식회사 알체라 제6기 대차대조표 공고 및 정기 주주총화 결과 공시</p><div class="news_viewmore">View more</div</div></li>
+                    <li><img src="img/newspage4.png" alt=""><div class="news_overbox"><div class="news_typo_banner">News</div><p>주식회사 알체라 제 6기 사업보고서 및 감사보고서</p><div class="news_viewmore">View more</div</div></li>
+                    <li><img src="img/newspage3.png" alt=""><div class="news_overbox"><div class="news_typo_banner">News</div><p>주식회사 알체라 제6기 정기주주총회 소집공고</p><div class="news_viewmore">View more</div</div></li>
+                    <li><img src="img/newspage2.png" alt=""><div class="news_overbox"><div class="news_typo_banner">News</div><p>주식회사 알체라 제6기 정기주주총회 소집공고</p><div class="news_viewmore">View more</div</div></li>
+                    <li><img src="img/newspage1.png" alt=""><div class="news_overbox"><div class="news_typo_banner">News</div><p>알체라 홈페이지가 새롭개 개편되었습니다.</p><div class="news_viewmore">View more</div</div></li>
+                </ul>
+    </div>
+    <div id="news_num_wrap">
+        <div class="news_controls">
+            <div class="news_prev_btn"><img src="img/p2-prev.png" alt=""></div>
+            <div class="news_num">
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                </ul>
+            </div>
+            <div class="news_next_btn"><img src="img/p2-next.png" alt=""></div>
+        </div>
+    </div>
+    </section>
+    <? include("footer.html"); ?>
+</body>
+</html>

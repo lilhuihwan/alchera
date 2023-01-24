@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sub_style.css">
+    <link rel="stylesheet" href="common.css">
+    <title>Alchera-Aiir-pass</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="js/gnb.js"></script>
+    <script>
+    $(document).ready(function(){
+        let scrollTop = $(window).scrollTop()
+        let p7_top_cate = $('.p7_top_cate').offset().top
+        let p7_info0 = $('#p7_info0').offset().top
+        let p7_info1 = $('#p7_info1').offset().top
+        let p7_info2 = $('#p7_info2').offset().top
+        let p7_info3 = $('#p7_info3').offset().top
+        let p7_info4 = $('#p7_info4').offset().top
+
+        $(window).resize(function(){
+        p7_top_cate = $('.p7_top_cate').offset().top
+        p7_info0 = $('#p7_info0').offset().top
+        p7_info1 = $('#p7_info1').offset().top
+        p7_info2 = $('#p7_info2').offset().top
+        p7_info3 = $('#p7_info3').offset().top
+        p7_info4 = $('#p7_info4').offset().top
+        })
+
+        $(window).scroll(function(){
+            scrollTop = $(window).scrollTop()
+            if(scrollTop>=p7_top_cate){
+                $('#p7_info0').animate({top:0,opacity:1})
+            }
+            if(scrollTop>=p7_info0){
+                $('#p7_info1').animate({top:0,opacity:1})
+            }
+            if(scrollTop>=p7_info1){
+                $('#p7_info2').animate({top:0,opacity:1})
+            }
+            if(scrollTop>=p7_info2){
+                $('#p7_info3').animate({top:0,opacity:1})
+            }
+            if(scrollTop>=p7_info3){
+                $('#p7_info4').animate({top:0,opacity:1})
+            }
+            if(scrollTop>=p7_info4){
+                $('#p7_info5').animate({top:0,opacity:1})
+            }
+            if(scrollTop>=p7_info4){
+                $('#p7_footBanner').delay(600).animate({top:0,opacity:1})
+            }
+        })
+
+
+    //  KEY FEAYURES
+    $('.tabs_title>li').each(function(index){
+        $(this).click(function(){
+            $(this).addClass('tabs_select').siblings().removeClass('tabs_select')
+            $('.tab_contents>div').eq(index).css('opacity','1').css('position','relative').siblings().css('opacity','0').css('position','absolute')
+        })
+
+    })
+
+    // INDUSRTY USAGE
+    $('.p7_info_cont_cate>ul>li').each(function(index){
+    $(this).click(function(){
+    $('.p7_info_cont_img>ul>li').eq(index).fadeIn(500).siblings().fadeOut(500)
+    $('.p7_info_cont_text>ul>li>ul').eq(index).fadeIn(500).parent().siblings().find('ul').fadeOut(500)
+        })
+    })
+    $('.p7_info1_img0>img').mouseover(function(){
+        $('.p7_info1_img0>.p7_info1_overbox0').fadeIn()
+    })
+    $('.p7_info1_img0>.p7_info1_overbox0').mouseleave(function(){
+        $('.p7_info1_img0>.p7_info1_overbox0').fadeOut()
+    })
+
+})
+    </script>
+</head>
+
+<body>
+    <? include("header.html"); ?>
+    <section id="p7_aiir_pass">
+    <section id="p7_topBanner">
+        <div class="p7_topbanner_wrap">
+            <img src="img/p7-topbannerimg.png" alt="">
+            <div class="p7_top_banner_cont"> 
+                <img src="img/p7-topbannericon.png" alt="">
+                <p>AI 출입/근태관리 솔루션</p>
+                <h2>Make your access easier and<br>
+                    faster</h2>
+            </div>
+        </div>
+    </section>
+    <div class="p7_top_cate">
+        <ul>
+            <li>AIIR Pass란?</li>
+            <li>AIIR Pass 특장점</li>
+            <li>다이어그램</li>
+            <li>주요기능</li>
+            <li>적용분야</li>
+        </ul>
+    </div>
+
+    <section id="p7_info0">
+        <div class="p7_sol_text0">
+            <h2>얼굴인식으로 빠르고
+                안전한 출입관리 시스템을 구축하세요</h2>
+        </div>
+        <div class="p7_info0_wrap">
+                <div class="p7_info0_box">
+                    <div>01</div>
+                    <img src="img/p3_info1_0.png" alt="">
+                    <h3>안전하고 위생적인 ​​출입관리</h3>
+                    <p>
+                        알체라의 비접촉식 얼굴 인식 출입 통제는 얼굴 식별, 온도 확인 및 마스크 감지가 가능, 기존 생체 인식(지문인식) 방법에 비해 안전하고 위생적입니다.</p>
+                </div>
+                <div class="p7_info0_box">
+                    <div>02</div>
+                    <img src="img/p3_info1_1.png" alt="">
+                    <h3>위조, 도용 걱정없는 얼굴 인증 출입</h3>
+                    <p>
+                        기존의 카드 태깅 방식 대비, 카드 분실 및 도용에 대한 이슈가 발생하지 않아 한층 더 보안이 강화된 출입 프로세스 구축이 가능합니다.</p>
+                </div>
+                <div class="p7_info0_box">
+                    <div>03</div>
+                    <img src="img/p3_info1_2.png" alt="">
+                    <h3>관리자 운영 편의성을 고려한 대시보드</h3>
+                    <p>운영자의 관점에서 설계된 대시보드
+                        기능들을 통해 모든 출입 기록을 한눈에 쉽게 모니터링할 수 있습니다.</p>
+                </div>
+         </div>
+    </section>
+
+    <section id="p7_info1">
+        <div class="p7_info1_text">
+            <h2>쉽게 적용할 수 있는 AI 출입관리 솔루션</h2>
+            <p>AIIR Pass(에어 패스)는 얼굴인식 기반의 출입관리 솔루션으로 카메라가 있는 모든 장치(휴대폰, 태블릿 등) 에 설치가 <br>
+                가능하며 출입문과도 쉽게 연동 가능합니다. 스마트한 출입과 근태 관리를 통해 기존 출입관리 시스템의 단점을 보안한 <br>
+                효율적이고 보안 높은 솔루션을 경험해 보세요.
+        </p>
+        </div>
+        <div class="p7_info1_img_wrap">
+            <div class="p7_info1_img0">
+                <img src="img/p7-info1-00.png" alt="">
+                <div class="p7_info1_overbox0">
+                <img src="img/p7-info1-01.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="p7_info2">
+        <div class="p7_sol_text2">
+            <h2>얼굴인식으로 빠르고
+                안전한 출입관리 시스템을 구축하세요</h2>
+        </div>
+        <div class="p7_info2_wrap">
+                <div class="p7_info2_box">
+                    <div>01</div>
+                    <img src="img/p3_info1_0.png" alt="">
+                    <h3>고성능 얼굴 인식 정확도</h3>
+                    <p>
+                        글로벌 최고 수준의 알체라 AI 얼굴인식 기술로, 빠르고 정확한 얼굴인식 출입관리가 가능합니다.</p>
+                </div>
+                <div class="p7_info2_box">
+                    <div>02</div>
+                    <img src="img/p3_info1_1.png" alt="">
+                    <h3>손쉬운 설치</h3>
+                    <p>
+                       알체라의 에어 패스 솔루션은 모든 OS, 모든 기기, 모든 카메라, 모든 갤러리 DB에 손쉽게 적용 가능합니다.</p>
+                </div>
+                <div class="p7_info2_box">
+                    <div>03</div>
+                    <img src="img/p3_info1_2.png" alt="">
+                    <h3>유연한 확장성</h3>
+                    <p>클라우드 기반 웹 서비스 API를 사용하여 사용자 수, 사용 범위에 맞게 언제든지 쉽게 확장 가능합니다.</p>
+                </div>
+         </div>
+    </section>
+
+    <section id="p7_info3">
+        <div class="p7_info3_text">
+        <p>HOW IT WORKS</p>
+        <h2>기존 장치 및 네트워크와의<br>
+        손쉬운 연동이 가능합니다.</h2>
+        <p>AIIR Pass (에어 패스)는 에지 디바이스와 출입문 연동으로 시설 내 모든 출입관리가 가능합니다. 대시보드를 통해 User <br>
+            Face DB에 대용량 업데이트를 하여 사용자를 관리할 수 있으며 딥러닝 과정을 통해 AI 엔진 서버가 지속적으로 <br>
+            업데이트되어 알체라의 최신 AI 엔진 성능에 기반한 얼굴인식 출입 및 근태관리가 가능합니다.</p>
+        </div>    
+        <div class="p7_info3_img">
+            <img src="img/p7-info3.png" alt="">
+        </div>
+        <div class="p7_info3_m_img">
+            <img src="img/p7-info3-m.png" alt="">
+        </div>
+    </section>
+
+
+
+
+    <section id="p7_info4">
+        <div>
+            <h2>KEY FEATURES</h2>
+            <ul class="tabs_title">
+                <li class="tabs_select"><h3>실시간 모니터링 및 로그 확인</h3></li>
+                <li><h3>무단 접근 알림</h3></li>
+                <li><h3>프로필 관리</h3></li>
+                <li><h3>사람 감지 및 추적</h3></li>
+                <li><h3>행동 추적</h3></li>
+            </ul>
+            <div class="tab_contents">
+                <div>
+                    <div class="p7_tabs_typo">
+                    <h3>실시간 모니터링 및 로그 확인</h3>
+                    <p>날짜와 장소를 설정하여 실시간으로 시설 안의 입출입 현황을 확인하고 관리할 수 있습니다.</p>
+                    </div>
+                    <div class="p7_tabs_img">
+                        <img src="img/p5_tabs0.png" alt="">
+                    </div>
+                </div>
+                <div>
+                    <div class="p7_tabs_typo">
+                        <h3>무단 접근 알림</h3>
+                        <p>등록 사용자 뿐 아니라 미등록 사용자에 대해서도 감지하며, 필요한 경우 이와 관련한 알람 기능을 제공합니다.</p>
+                        </div>
+                        <div class="p7_tabs_img">
+                            <img src="img/p5_tabs1.png" alt="">
+                        </div>
+                </div>
+                <div>
+                    <div class="p7_tabs_typo">
+                        <h3>프로필 관리</h3>
+                        <p>관리자가 사용자의 속성(카테고리) 를 정의하여, 카테고리 별로 사용자 관리(등록, 삭제 등) 가 가능합니다.</p>
+                        </div>
+                        <div class="p7_tabs_img">
+                            <img src="img/p5_tabs0.png" alt="">
+                        </div>
+                </div>
+                <div>
+                    <div class="p7_tabs_typo">
+                        <h3>사람 감지 및 추적</h3>
+                        <p>탐지 및 지속적인 추적을 통해 사람이나 물체를 찾습니다.</p>
+                        </div>
+                        <div class="p7_tabs_img">
+                            <img src="img/p5_tabs1.png" alt="">
+                        </div>
+                </div>
+                <div>
+                    <div class="p7_tabs_typo">
+                        <h3>행동 추적</h3>
+                        <p>방화나 월담 등과 같은 지정한 이상행동을 감지하고 패턴을 분석하여 모니터링 하는 관제 시스템 구축이 가능합니다.</p>
+                    </div>
+                    <div class="p7_tabs_img">
+                        <img src="img/p5_tabs0.png" alt="">
+                    </div>
+                </div>
+            </div>
+    </section>
+    <section id="p7_info5">
+        
+        <p>INDUSTRY USAGE</p>
+        <h3>다수인원에 대한 모니터링 및 관제가 필요한<br>다양한 비즈니스 현장에 활용 가능합니다.</h3>
+        <div class="p7_info_cont_wrap">
+            <div class="p7_info_cont_cate">
+                <ul>
+                    <li>교육 기관</li>
+                    <li>호텔 / 카지노</li>
+                    <li>공유오피스</li>
+                    <li>건설</li>
+                    <li>병원</li>
+                </ul>
+            </div>
+            <div class="p7_info_cont_img">
+                <ul>
+                    <li><img src="img/p6-info5-0.png" alt=""></li>
+                    <li><img src="img/p6-info5-1.png" alt=""></li>
+                    <li><img src="img/p6-info5-2.png" alt=""></li>
+                    <li><img src="img/p6-info5-3.png" alt=""></li>
+                    <li><img src="img/p6-info5-4.png" alt=""></li>
+                </ul>
+            </div>
+            <div class="p7_info_cont_text">
+                <ul>
+                    <li>
+                        <ul>
+                            <li>지정된 구역의 무단 접근 방지</li>
+                            <li>시설의 각 층에서 학생 찾기</li>
+                            <li>무단이탈자 추적</li>
+                            <li>얼굴인식으로 출석체크</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>각 지역의 트래픽 모니터링</li>
+                            <li>비정상적인 행동 추적</li>
+                            <li>지정된 구역의 무단 접근 방지</li>
+                            <li>차단된 액세스 제한</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>방문자 로그 제공</li>
+                            <li>비정상적인 행동 추적</li>
+                            <li>등록되지 않은 사람이 출입할 때 알림 수신</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>각 지역의 개인 모니터링</li>
+                            <li>무단이탈자 추적</li>
+                            <li>미등록자 출입 시 알림 수신</li>
+                            <li>비정상적인 행동 추적</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>임상 시험을 위해 개인 모니터링</li>
+                            <li>시설에서 환자 찾기</li>
+                            <li>비정상적인 행동 추적</li>
+                            <li>미등록자 출입 시 알림 수신</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id=p7_footBanner>
+        <img src="img/footbanner.png" alt="">
+        <img src="img/footbanner_m.png" alt="">
+        <div class="p7_foot_overbox">
+                <div class="p7_foot_icon">
+                    <img src="img/header_logo.png" alt="">
+                </div>
+                <div class="p7_foot_text">
+                    <h2>알체라의 AI 얼굴인식 기술을 직접 체험해보세요</h2>
+                    <p>AIIR SDK 데모를 무료로 이용해보실 수 있습니다. 지금 신청하세요!</p>
+                </div>
+                <div class="p7_foot_btn">
+                    <button>무료 데모 신청하기</button>
+            </div>
+    </div>
+    </section>
+    <? include("footer.html"); ?>
+</section>
+</body>
+</html>
