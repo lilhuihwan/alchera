@@ -1,126 +1,218 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="sub_style.css">
-    <link rel="stylesheet" href="common.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="sub_style.css" />
+    <link rel="stylesheet" href="common.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="js/gnb.js"></script>
     <title>Alchera-Aiir-api</title>
     <script>
-        $(document).ready(function(){
-            let scrollTop = $(window).scrollTop()
-            let p4_top_cate = $('.p4_top_cate').offset().top
-            let p4_info0 = $('#p4_info0').offset().top
-            let p4_info1 = $('#p4_info1').offset().top
-            let p4_info2 = $('#p4_info2').offset().top
+      $(document).ready(function () {
+        let scrollTop = $(window).scrollTop();
+        let p4_top_cate = $(".p4_top_cate").offset().top;
+        let p4_info0 = $("#p4_info0").offset().top;
+        let p4_info1 = $("#p4_info1").offset().top;
+        let p4_info2 = $("#p4_info2").offset().top;
 
-            $(window).resize(function(){
-            p4_top_cate = $('.p4_top_cate').offset().top
-            p4_info0 = $('#p4_info0').offset().top
-            p4_info1 = $('#p4_info1').offset().top
-            p4_info2 = $('#p4_info2').offset().top
-            })
+        $(window).resize(function () {
+          p4_top_cate = $(".p4_top_cate").offset().top;
+          p4_info0 = $("#p4_info0").offset().top;
+          p4_info1 = $("#p4_info1").offset().top;
+          p4_info2 = $("#p4_info2").offset().top;
+        });
 
-            $(window).scroll(function(){
-            scrollTop = $(window).scrollTop()
-                if(scrollTop>=p4_top_cate){
-                    $('#p4_info0').animate({top:0,opacity:1},600)
-                }
-                if(scrollTop>=p4_info0){
-                    $('#p4_info1').animate({top:0,opacity:1},600)
-                }
-                if(scrollTop>=p4_info1){
-                    $('#p4_info2').animate({top:0,opacity:1},600)
-                }
-                if(scrollTop>=p4_info2){
-                    $('#p4_footBanner').animate({top:0,opacity:1},600)
-                }
-            })
-        })
+        $(window).scroll(function () {
+          scrollTop = $(window).scrollTop();
+          if (scrollTop >= p4_top_cate) {
+            $("#p4_info0").animate({ top: 0, opacity: 1 }, 600);
+          }
+          if (scrollTop >= p4_info0) {
+            $("#p4_info1").animate({ top: 0, opacity: 1 }, 600);
+          }
+          if (scrollTop >= p4_info1) {
+            $("#p4_info2").animate({ top: 0, opacity: 1 }, 600);
+          }
+          if (scrollTop >= p4_info2) {
+            $("#p4_footBanner").animate({ top: 0, opacity: 1 }, 600);
+          }
+        });
+      });
     </script>
-</head>
-<body>
+  </head>
+  <body>
     <? include("header.html"); ?>
     <section id="p4_aiir_api">
-        <section id="p4_topBanner">
-            <div class="p4_topbanner_wrap">
-                <img src="img/p4-topbannerimg.png" alt="">
-                <div class="p4_top_banner_cont"> 
-                    <img src="img/p4-topbannericon.png" alt="">
-                    <h2>얼굴인식 API</h2>
-                    <p>Easy-to-use face AIat your hand</p>
-                </div>
-            </div>
-        </section>
-        <div class="p4_top_cate">
-            <ul>
-                <li>AIIR API란?</li>
-                <li>패키지 설명</li>
-            </ul>
+      <section id="p4_topBanner">
+        <div class="p4_topbanner_wrap">
+          <img src="img/p4-topbannerimg.png" alt="" />
+          <div class="p4_top_banner_cont">
+            <img src="img/p4-topbannericon.png" alt="" />
+            <h2>얼굴인식 API</h2>
+            <p>Easy-to-use face AIat your hand</p>
+          </div>
         </div>
-        <section id="p4_info0">
-            <div class="p4_info0_wrap">
-                <div class="p4_info0_text">                
-                            <h2>얼굴과 관련된 기능 개발을 위한 얼굴인식 API</h2>
-                            <h3>AIIR API(에어 API)는 얼굴인식을 위한 완전한 인터페이스입니다. 알체라에서 제공하는 간단한 코드 몇 줄이면 A-Z로 완벽하게 작동하는 얼굴인식 기능을 사용하실 수 있습니다. 이미지 속 얼굴의 주인을 찾거나 얼굴 위변조 여부를 검사하고, 마스크 착용 여부와 표정, 연령, 성별 등을 알아낼 수 있습니다. 별도 개발 없이 AIIR API로 첨단 얼굴인식 기능을 추가하세요.</h3>
-                </div>
-                <div class="p4_info0_img">
-                    <img src="img/p4_info0_0.png" alt="">
-                </div>
-            </div>
-        </section>
-        <section id="p4_info1">
-                <div class="p4_info1_title">
-                    <p>첨단의 얼굴인식을 최소한의 공수로 활용하세요</p>
-                </div>
-                <div class="p4_info1_cont">
-                    <ul>
-                        <li><div>01</div><img src="img/p3_info1_0.png" alt=""><h3>정확한 얼굴인식</h3><p>알체라는 글로벌 얼굴인식 테스트 NIST FRVT 최상위권 랭커로써,마스크를 착용한 상태에서도 99.99%의 정확도를 자랑합니다.</p></li>
-                        <li><div>02</div><img src="img/p3_info1_1.png" alt=""><h3>빠른 얼굴인식</h3><p>사용자가 얼굴인식을 위해 기다릴 필요가 없습니다.  1:1 매칭은 50만분의 1초, 200만명 기준 1:N 매칭은 1초 이내에 완료됩니다.</p></li>
-                        <li><div>03</div><img src="img/p3_info1_2.png" alt=""><h3>강력한 보안</h3><p>
-                            첨단의 얼굴인식으로 이용자의 신원을 보장하는 안전한 서비스를 만들 수 있습니다. AIIR SDK의 AI엔진은 AIIR ID나 AIIR Pass 등 알체라의 다른 솔루션들에도 활용되고 있습니다.
-                            </p></li>
-                        <li><div>04</div><img src="img/p3_info1_0.png" alt=""><h3>유연한 개발과 운영</h3><p>AIIR SDK는 확장성 높은 멀티플랫폼 개발 키트입니다. 기기당 한 번의 결제로 기간 제한 없이 사용이 가능하고 등록인원의 제한도 없습니다.</p></li>
-                    </ul>
-                </div>
-        </section>
-        <section id="p4_info2">
-            <div class="p4_info2_title">
-                <p>HOW IT WORKS</p>
-                <h2>고객님만의 패키지를 구성할 수 있습니다</h2>
-                <p>이용하려는 기기의 성능과 요구되는 속도, 개발 역량 등에 따라
-                    AIIR API로 수행할 기능의 범위를 직접 정하실 수 있습니다.</p>
-            </div>
-            <div class="p4_info2_cont">
-                <p>AIIR API로 Face Detection과 Face Matching 수행 : 개발을 최소화하고 싶으시다면, AIIR API를 통해 얼굴인식의 전 과정을
-                    알체라 클라우드 서버에서 수행하실 수 있습니다. 이 경우, 이용하시는 Edge 기기는 클라우드 서버로 이미지를 전송하기만 하면 됩니다.
-                    AIIR SDK로 Face Detection, AIIR API로 Face Matching 수행 : 개발 역량이 있고 더 높은 성능의 얼굴인식을 원하신다면 얼굴 
-                    검출부터 얼굴 정렬까지는 AIIR SDK를 통해 직접 개발하고, 특징 추출과 특징 매칭은 AIIR API로 클라우드 서버에서 수행하실 수 있습니다.
-                    어떤 방법이 더 적합할지 고민되신다면 알체라 영업팀에 문의 주시기 바랍니다.</p>
-                <img src="img/p4_info2.png" alt="">
-                <img src="img/p4_info2_m.png" alt="">
-            </div>
-        </section>
-        <section id=p4_footBanner>
-            <img src="img/footbanner.png" alt="">
-            <img src="img/footbanner_m.png" alt="">
-            <div class="p4_foot_overbox">
-                    <div class="p4_foot_icon">
-                        <img src="img/header_logo.png" alt="">
-                    </div>
-                    <div class="p4_foot_text">
-                        <h2>알체라의 AI 얼굴인식 기술을 직접 체험해보세요</h2>
-                        <p>AIIR SDK 데모를 무료로 이용해보실 수 있습니다. 지금 신청하세요!</p>
-                    </div>
-                    <div class="p4_foot_btn">
-                        <button>무료 데모 신청하기</button>
-                </div>
+      </section>
+      <div class="p4_top_cate">
+        <ul>
+          <li>AIIR API란?</li>
+          <li>패키지 설명</li>
+        </ul>
+      </div>
+      <section id="p4_info0">
+        <div class="p4_info0_wrap">
+          <div class="p4_info0_text">
+            <h2>얼굴과 관련된 기능 개발을 위한 얼굴인식 API</h2>
+            <h3>
+              AIIR API(에어 API)는 얼굴인식을 위한 완전한 인터페이스입니다.
+              알체라에서 제공하는 간단한 코드 몇 줄이면 A-Z로 완벽하게 작동하는
+              얼굴인식 기능을 사용하실 수 있습니다. 이미지 속 얼굴의 주인을
+              찾거나 얼굴 위변조 여부를 검사하고, 마스크 착용 여부와 표정, 연령,
+              성별 등을 알아낼 수 있습니다. 별도 개발 없이 AIIR API로 첨단
+              얼굴인식 기능을 추가하세요.
+            </h3>
+          </div>
+          <div class="p4_info0_img">
+            <img src="img/p4_info0_0.png" alt="" />
+          </div>
         </div>
-        </section>
-        <? include("footer.html"); ?>
+      </section>
+      <section id="p4_info1">
+        <div class="p4_info1_title">
+          <p>첨단의 얼굴인식을 최소한의 공수로 활용하세요</p>
+        </div>
+        <div class="p4_info1_cont">
+          <ul>
+            <li>
+              <div>01</div>
+              <img src="img/p3_info1_0.png" alt="" />
+              <h3>정확한 얼굴인식</h3>
+              <p>
+                알체라는 글로벌 얼굴인식 테스트 NIST FRVT 최상위권
+                랭커로써,마스크를 착용한 상태에서도 99.99%의 정확도를
+                자랑합니다.
+              </p>
+            </li>
+            <li>
+              <div>02</div>
+              <img src="img/p3_info1_1.png" alt="" />
+              <h3>빠른 얼굴인식</h3>
+              <p>
+                사용자가 얼굴인식을 위해 기다릴 필요가 없습니다. 1:1 매칭은
+                50만분의 1초, 200만명 기준 1:N 매칭은 1초 이내에 완료됩니다.
+              </p>
+            </li>
+            <li>
+              <div>03</div>
+              <img src="img/p3_info1_2.png" alt="" />
+              <h3>강력한 보안</h3>
+              <p>
+                첨단의 얼굴인식으로 이용자의 신원을 보장하는 안전한 서비스를
+                만들 수 있습니다. AIIR SDK의 AI엔진은 AIIR ID나 AIIR Pass 등
+                알체라의 다른 솔루션들에도 활용되고 있습니다.
+              </p>
+            </li>
+            <li>
+              <div>04</div>
+              <img src="img/p3_info1_0.png" alt="" />
+              <h3>유연한 개발과 운영</h3>
+              <p>
+                AIIR SDK는 확장성 높은 멀티플랫폼 개발 키트입니다. 기기당 한
+                번의 결제로 기간 제한 없이 사용이 가능하고 등록인원의 제한도
+                없습니다.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section id="p4_info2">
+        <div class="p4_info2_title">
+          <p>HOW IT WORKS</p>
+          <h2>고객님만의 패키지를 구성할 수 있습니다</h2>
+          <p>
+            이용하려는 기기의 성능과 요구되는 속도, 개발 역량 등에 따라 AIIR
+            API로 수행할 기능의 범위를 직접 정하실 수 있습니다.
+          </p>
+        </div>
+        <div class="p4_info2_cont">
+          <p>
+            AIIR API로 Face Detection과 Face Matching 수행 : 개발을 최소화하고
+            싶으시다면, AIIR API를 통해 얼굴인식의 전 과정을 알체라 클라우드
+            서버에서 수행하실 수 있습니다. 이 경우, 이용하시는 Edge 기기는
+            클라우드 서버로 이미지를 전송하기만 하면 됩니다. AIIR SDK로 Face
+            Detection, AIIR API로 Face Matching 수행 : 개발 역량이 있고 더 높은
+            성능의 얼굴인식을 원하신다면 얼굴 검출부터 얼굴 정렬까지는 AIIR
+            SDK를 통해 직접 개발하고, 특징 추출과 특징 매칭은 AIIR API로
+            클라우드 서버에서 수행하실 수 있습니다. 어떤 방법이 더 적합할지
+            고민되신다면 알체라 영업팀에 문의 주시기 바랍니다.
+          </p>
+          <img src="img/p4_info2.png" alt="" />
+          <img src="img/p4_info2_m.png" alt="" />
+        </div>
+      </section>
+      <section id="p4_footBanner">
+        <img src="img/footbanner.png" alt="" />
+        <img src="img/footbanner_m.png" alt="" />
+        <div class="p4_foot_overbox">
+          <div class="p4_foot_icon">
+            <img src="img/header_logo.png" alt="" />
+          </div>
+          <div class="p4_foot_text">
+            <h2>알체라의 AI 얼굴인식 기술을 직접 체험해보세요</h2>
+            <p>
+              AIIR SDK 데모를 무료로 이용해보실 수 있습니다. 지금 신청하세요!
+            </p>
+          </div>
+          <div class="p4_foot_btn">
+            <button>무료 데모 신청하기</button>
+          </div>
+        </div>
+      </section>
+      <div>
+        <a id="back-to-top" href="#">Top</a>
+      </div>
+      <script>
+        let btt = document.getElementById("back-to-top"),
+          docElem = document.documentElement,
+          offset,
+          scrollPos,
+          docHeight;
+
+        docHeight = Math.max(docElem.scrollHeight, docElem.offsetHeight);
+        if (docHeight != 0) {
+          offset = docHeight / 4;
+        }
+
+        window.addEventListener("scroll", function () {
+          scrollPos = docElem.scrollTop;
+          console.log(scrollPos);
+          btt.className = scrollPos > offset ? "visible" : "";
+        });
+
+        btt.addEventListener("click", function (ev) {
+          ev.preventDefault();
+          scrollToTop();
+        });
+        function scrollToTop() {
+          //일정 시간 마다 할 일
+          //var scrollInterval  = setInterval(할일,시간);
+          //0.0015s = 15
+          //할일 = function(){실제로 할 일}
+          // 윈도우의 스크롤이 0이 아닐 때
+          //실제로 할 일 window.scrollBy(0,-55);
+          //스크롤이 0이면 setInterval 멈춰라 clearInterval(이름);
+          var scrollInterval = setInterval(function () {
+            if (scrollPos != 0) {
+              window.scrollBy(0, -55);
+            } else {
+              clearInterval(scrollInterval);
+            }
+          }, 15);
+        }
+      </script>
+      <? include("footer.html"); ?>
     </section>
-</body>
+  </body>
 </html>
