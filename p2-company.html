@@ -12,36 +12,32 @@
     <script>
       $(document).ready(function () {
         let clickNum = 0;
-        $(".p2_info2_next").click(function () {
-          let ani = $(".p2_info2_cont>ul>li").is(":animated");
+        $('.p2_info2_next').click(function () {
+          let ani = $('.p2_info2_cont>ul>li').is(':animated');
           if (ani == false) {
             clickNum++;
             if (clickNum > 6) {
               clickNum = 0;
             }
-            $(".p2_info2_cont>ul>li")
+            $('.p2_info2_cont>ul>li')
               .first()
-              .animate({ marginLeft: -16.66667 + "%" }, 600, function () {
-                $(this).appendTo(".p2_info2_cont>ul").css("margin-left", 0);
+              .animate({ marginLeft: -16.66667 + '%' }, 600, function () {
+                $(this).appendTo('.p2_info2_cont>ul').css('margin-left', 0);
               });
           }
         });
-        $(".p2_info2_prev").click(function () {
-          let ani = $(".p2_info2_cont>ul>li").is(":animated");
+        $('.p2_info2_prev').click(function () {
+          let ani = $('.p2_info2_cont>ul>li').is(':animated');
           if (ani == false) {
             clickNum--;
             if (clickNum < 0) {
               clickNum = 6;
             }
-            $(".p2_info2_cont>ul>li")
-              .last()
-              .prependTo(".p2_info2_cont>ul")
-              .css("margin-left", "-16.66667%")
-              .animate({ marginLeft: 0 }, 600);
+            $('.p2_info2_cont>ul>li').last().prependTo('.p2_info2_cont>ul').css('margin-left', '-16.66667%').animate({ marginLeft: 0 }, 600);
           }
         });
 
-        $(".p2_info2_prev").click(function () {
+        $('.p2_info2_prev').click(function () {
           let ani1;
         });
       });
@@ -61,8 +57,7 @@
               </h2>
               <p>
                 Alchera는 호주 원주민어로 Dream Time, 꿈의 시대를 의미합니다.<br />
-                알체라는 세계를 선도하는 AI 기술력을 통해 꿈의 시대를 앞당기고자
-                합니다.
+                알체라는 세계를 선도하는 AI 기술력을 통해 꿈의 시대를 앞당기고자 합니다.
               </p>
             </div>
             <div class="top_sub_banner">
@@ -84,10 +79,8 @@
           <div class="p2_info0_text">
             <h2>Anytime, Anywhere with AIIR</h2>
             <p>
-              Artificial Intelligence Image Recognition의 약자 AIIR는 알체라의
-              Visual AI 통합 브랜드입니다. AIIR(에어)는<br />
-              유사한 발음의 영단어 Air, 즉 공기가 우리에게 지니는 의미처럼
-              생활에 꼭 필요하며 언제 어디에서나 접할 수 있는<br />
+              Artificial Intelligence Image Recognition의 약자 AIIR는 알체라의 Visual AI 통합 브랜드입니다. AIIR(에어)는<br />
+              유사한 발음의 영단어 Air, 즉 공기가 우리에게 지니는 의미처럼 생활에 꼭 필요하며 언제 어디에서나 접할 수 있는<br />
               솔루션을 만들겠다는 알체라의 다짐을 담고 있습니다.<br />
               AIIR를 통해 우리의 미래가 어떻게 달라질지 직접 경험해보세요.
             </p>
@@ -275,7 +268,7 @@
           <a id="back-to-top" href="#">Top</a>
         </div>
         <script>
-          let btt = document.getElementById("back-to-top"),
+          let btt = document.getElementById('back-to-top'),
             docElem = document.documentElement,
             offset,
             scrollPos,
@@ -286,13 +279,13 @@
             offset = docHeight / 4;
           }
 
-          window.addEventListener("scroll", function () {
+          window.addEventListener('scroll', function () {
             scrollPos = docElem.scrollTop;
             console.log(scrollPos);
-            btt.className = scrollPos > offset ? "visible" : "";
+            btt.className = scrollPos > offset ? 'visible' : '';
           });
 
-          btt.addEventListener("click", function (ev) {
+          btt.addEventListener('click', function (ev) {
             ev.preventDefault();
             scrollToTop();
           });
